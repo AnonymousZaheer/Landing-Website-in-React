@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 export default function FirstSection() {
-    const URL = 'https://bestmedicalbilling.com/wp-json/wp/v2/posts'
+    const URL = 'https://logicbpo.com/wp-json/wp/v2/posts?_embed'
     const [array, setArray] = useState([])
     useEffect(() => {
         async function fetchPosts() {
@@ -22,13 +22,21 @@ export default function FirstSection() {
 
                 </div>
             </div>
-            <div className="w-full flex flex-col gap-y-6 items-center pt-[100px] pb-[100px]">
-                <div className="flex flex-wrap  md:w-[90%] lg:w-[80%]  w-full bg-green-100 pl-2 pr-2 md:p-0 gap-x-0 items-center" >
-                    {array.map((item, index)=>(
+            <div className="w-full flex flex-col gap-y-6 items-center mt-8 mb-8 ">
+                <div className="flex flex-wrap  md:w-[90%] lg:w-[80%]  w-full pl-2 pr-2 md:p-0 gap-x-0 items-start" >
+                    {array.map((item, index) => (
                         <div key={index} className="w-1/3 p-2">
-                            <img src={item._embedded['wp:featuredmedia'][0].source_url} alt="" />
-                            <p  >{item.title.rendered}</p>
-                        </div>  
+                            <img className="rounded-lg" src={item._embedded['wp:featuredmedia'][0].source_url} />
+                            <div className="p-3 flex flex-col gap-y-2" >
+                                <div className="flex justify-between" >
+                                    <p>{item._embedded['author'][0].name}</p>
+                                    <p>{item._embedded['wp:term'][0][0].name}</p>
+                                </div>
+                                <h2 className="font-semibold text-lg">{item.title.rendered}</h2>
+                                <hr />
+                                <p>{item.excerpt.rendered}</p>
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>
