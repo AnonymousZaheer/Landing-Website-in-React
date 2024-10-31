@@ -4,6 +4,7 @@ import Blog from "./blog/Blog"
 import About from "./about/About"
 import Contact from "./contact/Contact"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path='/contact' element={<Contact />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   )
