@@ -6,7 +6,6 @@ import ThirdSection from "./ThirdSection";
 import SixthSection from "./SixthSection";
 import SeventhSection from "./SeventhSection";
 import EightSection from "./EightSection";
-import Example2 from "../contact/Example2";
 import NinethSection from "./NinethSection";
 import TenthSection from "./TenthSection";
 import ElevenSection from "./ElevenSection";
