@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 export default function Footer() {
     return (
-        <div className="bg-[#04805F] w-full p-10">
+        <div className="bg-[#04805F] w-full p-10 flex justify-center">
             <div className="bg-[#E7FAF5] w-[95%] p-10 flex gap-x-8 rounded-3xl" >
                 <div className="w-1/4 flex flex-col gap-y-3 items-start" >
                     <Link to='/' ><img src="https://bestmedicalbilling.com/wp-content/uploads/2023/12/bestmedicalbilling_newlogo.svg" alt="" /></Link>
