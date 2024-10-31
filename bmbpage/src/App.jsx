@@ -3,15 +3,17 @@ import Homepage from "./homepage/Homepage"
 import Blog from "./blog/Blog"
 import About from "./about/About"
 import Contact from "./contact/Contact"
+import Header from "./components/Header"
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/blog" element={ <Blog /> } />
-          <Route path="/about" element={ <About /> } />
-          <Route path='/contact' element={ <Contact /> } />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
