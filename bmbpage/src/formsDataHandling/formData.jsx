@@ -25,5 +25,17 @@ const homeForm1 = (details) => {
             console.log(error);
         });
 };
+const homeForm2 = (details) => {
+    emailjs.init('N6f4nCAkgbvNeqgu8');
+    emailjs.send(('service_x9vnzkd'),('template_43ujbuj'),{from_name:details.from_name, to_email:details.to_email, phone:details.phone}).then(
+        (response)=>{
+            console.log(response);
+        }
+    ).catch(
+        (error)=>{
+            console.log(error);
+        }
+    );
+}
 
-export { homeForm1 };
+export { homeForm1, homeForm2 };

@@ -1,4 +1,18 @@
+import { useState } from "react"
+import { homeForm2 } from "../formsDataHandling/formData";
+
 export default function TenthSection() {
+    const [data, setData] = useState({
+        from_name:'',
+        to_email:'',
+        phone:''
+    })
+
+    function handleData(e){
+        e.preventDefault();
+        homeForm2(data);
+    }
+
     return (
         <div className="flex flex-col items-center justify-center bg-[url(https://bestmedicalbilling.com/wp-content/uploads/2024/03/group_757.webp)] bg-cover bg-center  mt-8 mb-8">
             <div className="xl:w-9/12 w-full flex xl:flex-row flex-col items-center xl:pt-[80px] xl:pb-10 p-3 justify-between xl:gap-10 gap-3">
@@ -22,11 +36,11 @@ export default function TenthSection() {
                 </div>
             </div>
             <div className="flex w-full justify-center items-center xl:pt-8 p-3 xl:pb-[80px]">
-                <form action="" className="flex xl:flex-row w-full justify-center flex-col gap-3">
-                    <input type="text" placeholder="Name" className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
-                    <input type="email" placeholder="Email" name="" id="" className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
-                    <input type="tel" placeholder="Phone Number" name="" id="" className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
-                    <button type="button" className="bg-[#33BE99] text-white rounded-md pt-2 pb-2 pr-4 pl-4">Submit</button>
+                <form className="flex xl:flex-row w-full justify-center flex-col gap-3">
+                    <input type="text" placeholder="Name" value={data.from_name} onChange={(e)=>setData({...data, from_name:e.target.value})} className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
+                    <input type="email" placeholder="Email" value={data.to_email} onChange={(e)=>setData({...data, to_email:e.target.value})} className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
+                    <input type="tel" placeholder="Phone Number" value={data.phone} onChange={(e)=>setData({...data, phone:e.target.value})} className="pt-2 pb-2 pl-3 pr-3 rounded-md" />
+                    <button onClick={handleData}  type="button" className="bg-[#33BE99] text-white rounded-md pt-2 pb-2 pr-4 pl-4">Submit</button>
                 </form>
             </div>
         </div>
